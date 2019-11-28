@@ -3,6 +3,7 @@
 <head>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="prism.css" rel="stylesheet" />
     <title>Portfolio Website</title>
 </head>
 
@@ -19,15 +20,10 @@
                 <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                     <p class="text-center font-weight-bold" style="font-size: 30px; margin: 0px">About Me:</p>
                     <p class="text-center">
-                        I am an experienced game developer who has been developing games for the past 4 years. My
-                        journey in game development started when I was 15 as I started studying Computer Game Design at
-                        college, and I have since moved on and started studying Computer Game Programming at
-                        Staffordshire University.
+                        An experienced game developer with extensive knowledge of how to develop games in commercial game engines, as well as in developing game engines to implement games into.
                     </p>
                     <p class="text-center">
-                        I am currently seeking out oppourtunities for work placements for the next academic year in the
-                        hopes of learning in a real world environment and assisting with real world technical problems
-                        in the games industry.
+                        Currently searching for oppourtunities to work in a game studio environment for a third year placement year in the next academic year.
                     </p>
                     <p class="text-center font-weight-bold" style="font-size: 30px; margin: 0px">Core Skills:</p>
                     <ul>
@@ -42,6 +38,7 @@
                             <li>Including vectors, matrices, calculus and trigonometry</li>
                         </ul>
                         <li>Object Oriented Design with UML</li>
+                        <li>Experience with GitHub source control</li>
                         <li>Strong communication and collaboration skills</li>
                         <ul>
                             <li>Experienced with collaborating in teams of varying disciplines</li>
@@ -124,7 +121,7 @@
                                 the source material</li>
                             <li>Through developing this project I was able to attain a deep understanding of how to use
                                 the SDL library</li>
-                            <li>In developing the engine for this project I was able to learn a lot about utilizing object-oriented design to decouple and organize functionality</li>
+                            <li>In developing the engine for this project I was able to learn a lot about utilizing object-oriented programming to organize functionality</li>
 
                         </ul>
                     </div>
@@ -164,16 +161,19 @@
 
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <p class="text-center font-weight-bold" style="font-size: 30px; margin: 0px">Code Samples:</p>
-            <p class="text-center">
-                I developed this project for my Game Engines Creation module during my first year of university,
-                programming it in C++ using the SDL library. The end result is a clone of the original arcade Mario
-                Bros game, and a clone of the original Super Mario Bros for the NES, all implemented into one game.
-                Features include one and two-player modes for both games, a functional level editor that works for
-                both games simultaeniously, high scores for both games,and functional user interface components that
-                are used in the main menu and level editor. Game-related features include working collision, AI,
-                animation, sound, and gameplay functionality such as death, score, victory conditions (for Super
-                Mario Bros) and collectibles (coins). I earned an overall grade of 97% for this assignment.
-            </p>
+            <pre>
+                <code class="language-cpp">
+                    #include <<no>iostream>
+
+                    using namespace std;
+
+                    int main()
+                    {
+                        cout << "Hello world!" << endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
         </div>
 
 
@@ -244,6 +244,7 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="prism.js"></script>
 </body>
 
 </html>
