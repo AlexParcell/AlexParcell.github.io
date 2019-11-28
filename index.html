@@ -169,7 +169,7 @@
 
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Code Samples:</h3>
-            <p class="font-weight-bold" style="font-size: 20px; margin: 0px">Z Indexing in abstract level class:</p>
+            <p class="font-weight-bold" style="font-size: 20px; margin: 0px">Character Movement:</p>
             <pre>
                 <code class="language-cpp">
                     // Standard run of the mill bubblesort
@@ -178,9 +178,9 @@
                         bool SwappedThisPass = false;
 
                         // Go through each object
-                        for (int i = 0; i <<no> mObjects.size(); i++)
+                        for (int i = 0; i < mObjects.size(); i++)
                         {
-                            if (i + 1 <<no> mObjects.size()) // If we aren't at the end
+                            if (i + 1 < mObjects.size()) // If we aren't at the end
                             {
                                 // is the left Z greater than the right Z?
                                 if (mObjects[i]->GetZindex() > mObjects[i + 1]->GetZindex())
@@ -220,7 +220,7 @@
                         }
 
                         // For each character, render out the character at it's position
-                        for (int i = 0; i <<no> mText.size(); i++)
+                        for (int i = 0; i < mText.size(); i++)
                         {
                             Vector2D Position = GetCharacterSpritesheetPosition(mText[i]);
                             SDL_Rect RenderRect = { Position.x * mCharacterSize, Position.y * mCharacterSize, mCharacterSize, mCharacterSize };
