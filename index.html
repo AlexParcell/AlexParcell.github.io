@@ -79,14 +79,36 @@
             <p class="text-center font-weight-bold" style="font-size: 30px; margin: 0px">Project Info:</p>
             <p class="text-center">
                 I developed this project for my Game Engines Creation module during my first year of university,
-                programming it in C++ using the SDL library. The end result is a clone of the original arcade Mario Bros
-                game, and a clone of the original Super Mario Bros for the NES, all implemented into one game. Features
-                include one and two-player modes for both games, a functional level editor that works for both games
-                simultaeniously, high scores for both games,and functional user interface components that are used in
-                the main menu and level editor. Game-related features include working collision, AI, animation, sound,
-                and gameplay functionality such as death, score, victory conditions (for Super Mario Bros) and
-                collectibles (coins). I earned an overall grade of 97% for this assignment.
+                programming it in C++ using the SDL library. The end result is a clone of both the original arcade Mario
+                Bros
+                game, and the original Super Mario Bros for the NES, combined into one game. I earned a grade of 97% on
+                the assignment this project was developed for.
             </p>
+        </div>
+
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+            <p class="text-center font-weight-bold" style="font-size: 30px; margin: 0px">Features:</p>
+            <ul>
+                <li>Engine Features:</li>
+                <ul>
+                    <li>AABB Collision with blocking capabilities</li>
+                    <li>User interface with working text and buttons</li>
+                    <li>Sprite animations</li>
+                    <li>A level editor that can save, load and edit levels</li>
+                    <li>Music and sound effects</li>
+                </ul>
+                <li>Gameplay Features:</li>
+                <ul>
+                    <li>Level victory (for Super Mario Bros) and death (for both)</li>
+                    <li>Two player mode for Mario Bros</li>
+                    <li>Working koopas with kickable shells that cause damage</li>
+                    <li>Coins that give score</li>
+                    <li>Breakable blocks, pow blocks and blocks that give coins</li>
+                    <li>Seperate high score tables for both games with a screen to enter name after level is finished
+                    </li>
+                </ul>
+
+            </ul>
         </div>
 
         <div class="container">
@@ -96,11 +118,14 @@
                         <p class="text-center font-weight-bold" style="font-size: 30px; margin: 0px">What went well?</p>
                         <ul>
                             <li>Both games were implemented successfully and strongly resembled the source material</li>
-                            <li>Making the level editor, main menu and high score tables taught me a lot about developing UI components from scratch</li>
-                            <li>Because of my attention to detail, I was able to recreate level 1-1 from the original Super Mario Bros.</li>
-                            <ul>
-                                <li>The only difference is I did not include goombas, there are only koopas.</li>
-                            </ul>
+                            <li>Making the level editor, main menu and high score tables taught me a lot about
+                                developing UI components from scratch</li>
+                            <li>My level editor was robust enough to enable me to accurately recreate the levels from
+                                the source material</li>
+                            <li>Through developing this project I was able to attain a deep understanding of how to use
+                                the SDL library</li>
+                            <li>In developing the engine for this project I was able to learn a lot about utilizing object-oriented design to decouple and organize functionality</li>
+
                         </ul>
                     </div>
                 </div>
@@ -112,7 +137,8 @@
                         <ul>
                             <li>My collision blocking had minor unexpected behaviour in a few edge cases</li>
                             <ul>
-                                <li>With more time, I would have researched a more robust method of collision blocking</li>
+                                <li>With more time, I would have researched a more robust method of collision blocking
+                                </li>
                             </ul>
                             <li>The level editor could have been more user-friendly</li>
                             <ul>
@@ -120,7 +146,15 @@
                             </ul>
                             <li>My implementation for UI buttons could have been improved</li>
                             <ul>
-                                <li>The current system performs AABB checks on each button onscreen and then </li>
+                                <li>The current system is not very modular and adding new buttons can be a very
+                                    complicated task</li>
+                                <li>Performing AABB checks on every button onscreen to see if it collides with the mouse
+                                    every frame is computationally expensive</li>
+                            </ul>
+                            <li>I could have added more features to make the recreation more accurate</li>
+                            <ul>
+                                <li>This include enemies such as goombas, and powerups such as stars, mushrooms and fire
+                                    flowers</li>
                             </ul>
                         </ul>
                     </div>
@@ -204,11 +238,11 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 
