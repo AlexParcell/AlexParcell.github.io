@@ -174,7 +174,7 @@
         </div>
 
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
-            <h2 class="text-center font-weight-bold">DirectX 11 Graphics Project (Work in Progress)</h2>
+            <h2 class="text-center font-weight-bold">DirectX 11 Graphics Project (Work in Progress) (2019-)</h2>
         </div>
 
         <div class="embed-responsive embed-responsive-16by9">
@@ -246,6 +246,65 @@
                 </div>
             </div>
         </div>
+
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
+                <h2 class="text-center font-weight-bold">Tilewar (2018)</h2>
+            </div>
+    
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PFAPnO_OQ08"></iframe>
+            </div>
+    
+            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                <h3 class="text-center font-weight-bold">Project Info:</h3>
+                <p class="text-center">
+                    Tilewar was a project I developed at college during my studies in game design for a specialist project, when I specialized in engine development and programming. It is a turn based strategy game made in UE4 primarily with the C++ API it provides, and features a custom implementation of the A* pathfinding algorithm.
+                </p>
+            </div>
+    
+            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                <h3 class="text-center font-weight-bold">Features</h3>
+                <ul>
+                    <li>A custom tile grid system</li>
+                    <li>A custom implementation of A* that is compatible with my tile system</li>
+                    <ul>
+                        <li>Makes use of UE4's binary heap data structure</li>
+                        <li>Uses euclidean distance and tiebreaker heuristics</li>
+                    </ul>
+                    <li>Multiple levels</li>
+                    <li>Basic graphics settings</li>
+                    <li>AI that reacts to conditions in the game (defensive when hurt, otherwise on the offensive against the player)</li>
+                    <li>Multiple player characters that the player can switch between and control if they have usable movement points in the turn</li>
+                    <li>Win and lose conditions based on if the player kills all the enemies or the enemies kill all player characters</li>
+                </ul>
+            </div>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                            <h3 class="text-center font-weight-bold">What went well?</h3>
+                            <ul>
+                                <li>In developing this project I learned how to use C++ with Unreal Engine 4 and developed my skills in working with existing complex codebases</li>
+                                <li>I successfully taught myself the A* pathfinding algorithm and managed to implement it into UE4 whilst adapting to and working with the constraints and pre-existing functionality of the engine</li>
+                                <li>I managed to get the AI working well and in a way that feels challenging and interesting to play against</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                            <h3 class="text-center font-weight-bold">How could I improve it?</h3>
+                            <ul>
+                                <li>There are some minor bugs with turn order that could be fixed if I had more time to work on the project</li>
+                                <li>Visuals could do with some work</li>
+                                <li>The game would perhaps be more interesting if instead of using a tile based system it instead was more freeform with some terrain that takes longer to traverse than other terrain</li>
+                                <li>My calculations that work out damage dealt by attacks that factor in the attack and defense of both the attacker and defender could have been more thought out</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
