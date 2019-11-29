@@ -4,11 +4,12 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
     <link href="prism.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Portfolio Website</title>
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluidjumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+    <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
         <h1 class="display-3 text-center font-weight-bold">Alex Parcell</h1>
         <p class="lead text-center font-weight-bold">Game Programmer studying Computer Game Programming (BSc) at
             Staffordshire University</p>
@@ -17,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                     <h2 class="text-center font-weight-bold">About Me:</h2>
                     <p class="text-center">
                         A 19 year old British game developer with experience in both developing games in commercial game
@@ -42,7 +43,7 @@
             </div>
 
             <div class="col">
-                <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 2%">
+                <div class="jumbotron" style="padding-top: 1%; padding-bottom: 2%">
                     <h2 class="text-center font-weight-bold">Skills:</h2>
                     <ul>
                         <li class="font-weight-bold">C++</li>
@@ -73,7 +74,7 @@
             </div>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
             <h2 class="text-center font-weight-bold">Mario Clone (2019)</h2>
         </div>
 
@@ -81,7 +82,7 @@
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BBxFVxukcUY"></iframe>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Project Info:</h3>
             <p class="text-center">
                 I developed this project for my Game Engines Creation module during my first year of university,
@@ -100,15 +101,26 @@
         </div>
 
         <div class="collapse" id="MarioCollapse">
-            <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                 <h3 class="text-center font-weight-bold">Features</h3>
                 <ul>
                     <li>Engine Features:</li>
                     <ul>
                         <li>AABB Collision with blocking capabilities</li>
+                        <ul>
+                            <li>Radius-based collision is used for coins because they're circular, to make collision feel a little more realistic</li>
+                        </ul>
                         <li>User interface with working text and buttons</li>
-                        <li>Sprite animations</li>
+                        <li>Sprite animations that change based on gameplay conditions</li>
+                        <ul>
+                            <li>Mario's animations will change based on whether they are moving, staying still, jumping, or have died</li>
+                            <li>Koopa's animations will change based on whether they are moving, in their shell staying still, or in their shall and moving</li>
+                        </ul>
                         <li>A level editor that can save, load and edit levels</li>
+                        <ul>
+                            <li>The level editor features menus that can be opened via buttons to choose items to add, select the level to edit, and there is also a button to save</li>
+                            <li>There is a working movable camera in the level editor that is restricted to the level bounds, that the user can use to move around in the level</li>
+                        </ul>
                         <li>Music and sound effects</li>
                         <li>A system for managing and switching between levels</li>
                     </ul>
@@ -123,14 +135,46 @@
                             finished
                         </li>
                     </ul>
-
+                </ul>
+                <h3 class="text-center font-weight-bold">Problems Solved</h3>
+                <ul>
+                    <li>To navigate my user interface widgets, I needed to implement buttons, so I made my own using AABB collision
+                        checks to check if a button is clicked, and using enums to tag buttons with certain purposes and
+                        using switch statements to execute the correct response upon a button being clicked</li>
+                    <li>SDL does not have functionality for text handling, so I implemented my own text that takes
+                        strings and then makes them into a sequence of sprites from a spritesheet and renders them
+                        sequentially</li>
+                    <ul>
+                        <li>I used a spritesheet from the source material, but perhaps if the spritesheet were in ASCII
+                            order the implementation would be more elegant</li>
+                        <li>Because Super Mario Bros had limited characters, I wasn't able to implement a wide variety
+                            of characters and had to make do with what was available</li>
+                    </ul>
+                    <li>To save on memory and to prevent unexpected behaviour, instead of using the game object classes used for the actual live gameplay as
+                        placeable tiles in the level editor, I had to make a level editor tile for each game object class that is converted
+                        into a format when the level is saved, that represents the live tiles when the actual level is loaded and played</li>
+                    <li>To implement blocking collision, I implemented a system into movement that performed checks to
+                        see if a character's movement would make them overlap (determined with AABB) with something that
+                        blocks, and if it does, the movement is cancelled</li>
+                    <ul>
+                        <li>Because all characters (Koopas, Mario, Luigi, coins in Mario Bros) are subclasses of the character baseclass that the movement function is implemented into, this blocking collision is implemented elegantly into all game objects that move</li>
+                    </ul>
+                    <li>I made use of a sorting algorithm, both for adding Z sorting to ensure objects correctly render
+                        in the right order, taking advantage of the fact that whatever is rendered last in SDL will show
+                        at the front of the view</li>
+                    <ul>
+                        <li>I also used a sorting algorithm to make it so that high scores are displayed from highest to
+                            lowest, with anything out of the top being culled</li>
+                        <li>The algorithm I used was bubblesort</li>
+                    </ul>
+                    <li>To make using the level editor a little easier and user-friendly, I added a grid that can be toggled with the G key that toggles a grid that overlays over the screen so the user knows exactly which tile they're placing their object into when designing levels</li>
                 </ul>
             </div>
 
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">What went well?</h3>
                             <ul>
                                 <li>Both games were implemented successfully and strongly resembled the source material
@@ -159,7 +203,7 @@
                     </div>
 
                     <div class="col">
-                        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">How could I improve it?</h3>
                             <ul>
                                 <li>My collision blocking had minor unexpected behaviour in a few edge cases</li>
@@ -194,7 +238,7 @@
             </div>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
             <h2 class="text-center font-weight-bold">DirectX 11 Graphics Project (Work in Progress) (2019-)</h2>
         </div>
 
@@ -202,7 +246,7 @@
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fwPSk6U_tiY"></iframe>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Project Info:</h3>
             <p class="text-center">
                 This is a work in progress application I am developing in DirectX 11 for my Further Games & Graphics
@@ -220,7 +264,7 @@
         </div>
 
         <div class="collapse" id="DirectXCollapse">
-            <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                 <h3 class="text-center font-weight-bold">Current Features</h3>
                 <ul>
                     <li>Specular, diffuse and ambient lighting</li>
@@ -244,7 +288,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">What is going well?</h3>
                             <ul>
                                 <li>Lighting and texturing are working exactly as intended</li>
@@ -266,7 +310,7 @@
                     </div>
 
                     <div class="col">
-                        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">How do I need to improve?</h3>
                             <ul>
                                 <li>The skybox needs a better texture (currently placeholder), and the shape needs to be
@@ -288,7 +332,7 @@
             </div>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
             <h2 class="text-center font-weight-bold">Tilewar (2018)</h2>
         </div>
 
@@ -296,7 +340,7 @@
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PFAPnO_OQ08"></iframe>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Project Info:</h3>
             <p class="text-center">
                 Tilewar was a project I developed at college during my studies in game design for a specialist project,
@@ -309,11 +353,12 @@
                     aria-expanded="false" aria-controls="TilewarCollapse">
                     Read More
                 </a>
-                <a class="btn btn-primary" href="https://drive.google.com/open?id=1kngBQW4vzlCLQnPEIpQ0e6nEe31iJRnS" role="button">Download</a>
+                <a class="btn btn-primary" href="https://drive.google.com/open?id=1kngBQW4vzlCLQnPEIpQ0e6nEe31iJRnS"
+                    role="button">Download</a>
             </p>
         </div>
         <div class="collapse" id="TilewarCollapse">
-            <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                 <h3 class="text-center font-weight-bold">Features</h3>
                 <ul>
                     <li>A custom tile grid system</li>
@@ -338,7 +383,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">What went well?</h3>
                             <ul>
                                 <li>In developing this project I learned how to use C++ with Unreal Engine 4 and
@@ -356,7 +401,7 @@
                     </div>
 
                     <div class="col">
-                        <div class="jumbotron jumbotron-fluid" style="padding-top: 1%; padding-bottom: 1%">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">How could I improve it?</h3>
                             <ul>
                                 <li>There are some minor bugs with turn order that could be fixed if I had more time to
