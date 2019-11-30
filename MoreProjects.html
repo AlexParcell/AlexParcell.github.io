@@ -16,7 +16,6 @@
     </div>
 
     <div class="container">
-
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Here are some other projects!</h3>
             <p class="text-center">Listed below are projects that I am proud of, but I feel either do not adequately
@@ -39,11 +38,12 @@
             <p class="text-center">
                 Made in Unreal Engine 4 using blueprint visual scripting in six weeks, Ramen Rush is a singleplayer
                 cooking game in which the player has to make ramen for hungry customers before time runs out, hoping to
-                make enough money to make rent for that day. I made this game for my final project during my final year
-                of college and earned a Distinction grade for it.
+                make enough money to make rent for that day.
             </p>
             <p class="text-center">
-                My role on this project oriented around designing and programming the game, but I collaborated with a
+                I made this game for my final project during my third year
+                of college and earned a Distinction grade for it. My role on this project oriented around designing and
+                programming the game, but I collaborated with a
                 professional sound designer to implement the sound effects and music.
             </p>
             <p class="text-center">
@@ -52,13 +52,59 @@
                     Read More
                 </a>
                 <a class="btn btn-primary" href="https://drive.google.com/open?id=1LC4OIwW3MOQcG0q8qxBxvJH_giY1dA0I"
-                role="button">Download</a>
+                    role="button">Download</a>
             </p>
         </div>
 
         <div class="collapse" id="RamenCollapse">
             <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                 <h3 class="text-center font-weight-bold">Features</h3>
+                <ul>
+                    <li>Fully functioning main menu with basic graphics/gameplay/audio settings, helpful information on
+                        gameplay, credits, and a play button </li>
+                    <ul>
+                        <li>Based on whether there is saved data or not from previous gameplay sessions, the play button
+                            will either let the player carry on where they left off or start a new game</li>
+                    </ul>
+                    <li>Autosave functionality that keeps track of where the player is in terms of progress that can be
+                        loaded in when the game starts</li>
+                    <li>A fully functional tutorial for new players when they start a new game</li>
+                    <li>Spline-based movement for customers</li>
+                    <li>Custom built Z-indexing that factors in position on Y axis to determine position on Z axis</li>
+                    <li>Fully implemented sound effects provided custom-made by collaborating with a professional sound
+                        designer</li>
+                    <li>Pixel art developed by myself</li>
+                    <li>Win and lose conditions based on whether earnings are sufficient or not, that then enables
+                        progression if sufficient</li>
+                </ul>
+                <h3 class="text-center font-weight-bold">Problems Solved</h3>
+                <ul>
+                    <li>I needed a way to get customers to walk in and out of the ramen restaurant, but instead of using
+                        a computationally expensive pathfinding solution I instead just had them follow a spline
+                        forwards when they enter, and then backwards when they leave</li>
+                    <ul>
+                        <li>To add variation, there are about a dozen different potential splines in the level, and all
+                            ones not currently in use are factored into a random selection that the customer makes when
+                            they spawn</li>
+                    </ul>
+                    <li>During playtesting, I noted that nobody really understood how to play the game. I first added a
+                        help section in the main menu and even a little digital booklet that showed at the start of the
+                        first level, but nobody was taking the time to read it. So, I created an interactive tutorial
+                        that ensured the player would understand how to make ramen. Playtesting showed that this
+                        solution worked.</li>
+                    <li>Due to the fact that I had only 6 weeks to develop this game, I scoped this game to be as
+                        simplistic but fulfilling as I could.</li>
+                    <li>I was using Unreal Engine 4, an inherently 3D engine, and noted that creating the illusion of
+                        depth in a 2D space was really difficult to achieve. I reverse engineered other games that do
+                        the same effect and realized that they had a system where the highest on the Y axis an entity
+                        was, the lower it's Z index would be. I implemented a system to Z index using this method during
+                        runtime.</li>
+                    <ul>
+                        <li>This is why if the player stands behind a counter, they will render behind it, but if they
+                            stand infront of it, they will render ontop of it.</li>
+                    </ul>
+                </ul>
+
             </div>
 
             <div class="container">
@@ -67,7 +113,15 @@
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">What went well?</h3>
                             <ul>
-
+                                <li>Considering time constraints, I was able to make a well recieved game that attracted
+                                    a lot of attention from visitors at the end of year game show.</li>
+                                <li>I managed to successfully collaborate with a professional game developer for the
+                                    first time in developing this project.</li>
+                                <li>The game implementation was extremely smooth, and I feel like I demonstrated a deep
+                                    knowledge of blueprint visual scripting in making the game.</li>
+                                <li>The implemented tutorial fulfilled the design goal of teaching new players how to
+                                    play successfully.</li>
+                                <li>The targetted gameplay aesthetics were delivered as predicted in design.</li>
                             </ul>
                         </div>
                     </div>
@@ -76,7 +130,10 @@
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">How could I improve it?</h3>
                             <ul>
-
+                                <li>The art could have been to a much higher quality, it was very much programmer art
+                                    and lacked any aesthetic vision or animation</li>
+                                <li>With more time I could have potentially added a gameplay mode that never ends with a
+                                    high score system, to improve replayability</li>
                             </ul>
                         </div>
                     </div>
@@ -95,9 +152,14 @@
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Project Info:</h3>
             <p class="text-center">
-                Synthfighter was developed in 12 weeks in Unreal Engine 4 with blueprint visual scripting. I worked
-                alongside a 3D modeller and a sound designer to implement the game, and acted as the team leader,
-                technical designer and UI/UX designer. We earned a grade of Distinction for our work.
+                Synthfighter is a Star Fox inspired endless runner in which the player is tasked with shooting targets
+                to open gates so they can continue to evade the aliens that are chasing them. The goal is to get the
+                highest score possible.
+            </p>
+            <p class="text-center">
+                I made this game alongside a 3D modeller and sound designer for our final project during my second year
+                at college. We completed the project in around 12 weeks and earned grade Distinction for our work. My
+                role in the team was that of team leader, technical designer and UI/UX designer.
             </p>
             <p class="text-center">
                 <a class="btn btn-primary" data-toggle="collapse" href="#SynthCollapse" role="button"
@@ -105,14 +167,53 @@
                     Read More
                 </a>
                 <a class="btn btn-primary" href="https://drive.google.com/open?id=0B0aI_RbXn1BETWFOX3FrSEQtdEU"
-                role="button">Download</a>
+                    role="button">Download</a>
             </p>
         </div>
 
         <div class="collapse" id="SynthCollapse">
             <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-                <h3 class="text-center font-weight-bold">Current Features</h3>
-
+                <h3 class="text-center font-weight-bold">Features</h3>
+                <ul>
+                    <li>Functional menus including a main menu, pause menu and death menu</li>
+                    <li>A high score system that motivates the player to aim to live for the longest time they can</li>
+                    <ul>
+                        <li>Because this is an endless runner, this feature was absolutely essential</li>
+                        <li>I also implemented a little system to randomly generate a name if the player cannot think of
+                            one</li>
+                        <li>The player can choose to optionally submit a score after they die during gameplay</li>
+                        <li>High scores save to file and can be reloaded in during future plays</li>
+                    </ul>
+                    <li>Functional collectables that give boost, health or score</li>
+                    <li>Diagetic user interface to act as the HUD to show health and boost power</li>
+                    <ul>
+                        <li>This was implemented as a response to feedback late in development, as the HUD was taking
+                            the player's eye away from the ship</li>
+                    </ul>
+                    <li>Ship movement that accurately simulates how a ship tilts and turns during flight</li>
+                    <ul>
+                        <li>The player can also barrel roll, as a homage to Star Fox.</li>
+                    </ul>
+                    <li>Fully implemented sound and models sourced internally in our development team.</li>
+                    <li>Full gamepad support.</li>
+                </ul>
+                <h3 class="text-center font-weight-bold">Problems Solved</h3>
+                <ul>
+                    <li>To accomodate endless runner gameplay, I implemented a system where there is a baseclass level
+                        segment, and just before gates are opened, a new segment is loaded in.</li>
+                    <ul>
+                        <li>There are subclasses to the level segments, each unique with unique configurations of
+                            targets and collectibles, any designer working on the project can simply make a class that
+                            inherits from the baseclass and it will be included.</li>
+                        <li>Because theoretically if the game went on forever the game would slow down as more and more
+                            instances of level segments come in, level segments are destroyed when they have been
+                            passed.</li>
+                        <li>A level segment subclass is randomly chosen and spawned in just before the gate opens during
+                            runtime, like a very rudimentary form of procedural generation.</li>
+                    </ul>
+                    <li>Players were complaining that the HUD was breaking immersion, so I implemented a diagetic HUD
+                        that seemed to have solved the issue in later playtesting sessions.</li>
+                </ul>
             </div>
 
             <div class="container">
@@ -120,14 +221,41 @@
                     <div class="col">
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">What went well?</h3>
-
+                            <ul>
+                                <li>I managed to successfully lead and organize the development team to meet deadlines
+                                    on time.</li>
+                                <li>Sound and art were developed to fit the needs of the project and I managed to
+                                    implement them appropriately with the aid of my team.</li>
+                                <li>The ship felt good to control.</li>
+                                <li>We managed to successfully explore the endless runner aspect of the game, and the
+                                    game theoretically could run indefinitely for the most part.</li>
+                                <ul>
+                                    <li>Maybe eventually things like the score would overflow, but that would take an
+                                        exceptionally long time.</li>
+                                </ul>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">How could I improve it?</h3>
-
+                            <ul>
+                                <li>The game could use more variation, perhaps in terms of the direction the player
+                                    moves in changing, forked paths where they must choose which way to go.</li>
+                                <ul>
+                                    <li>More obstacles and obstructions would have been good too.</li>
+                                </ul>
+                                <li>The presence of the enemies chasing you is not very well communicated to the player
+                                    and the sense of tension and danger is not there.</li>
+                                <ul>
+                                    <li>Maybe if I had a little UI panel that showed a rear view mirror type view of how
+                                        close they are, that would have conveyed more threat.</li>
+                                </ul>
+                                <li>There is a popup that asks about a Substance plugin when the executable is ran, even
+                                    though the Substance UE4 plugin is not used in the game. I should have taken some
+                                    time to figure out how to fix that. For now, pressing "No" on the popup makes it work.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -145,9 +273,12 @@
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Project Info:</h3>
             <p class="text-center">
-                Cyber Samurai Insurgency is a cyberpunk 2D platformer implemented into Unreal Engine 4 with visual
-                blueprints. I developed it for my final project during my first year of college and earned a grade of
-                Distinction on it.
+                Cyber Samurai Insurgency is a 2D cyberpunk platformer where you play as a digital samurai exploring the
+                databases of a corrupt Orwellian world government, the goal being to progress to the end of the level.
+            </p>
+            <p class="text-center">
+                I developed this game in 12 weeks for my final project in my first year of college and earned a
+                Distinction for it.
             </p>
             <p class="text-center">
                 <a class="btn btn-primary" data-toggle="collapse" href="#CyberCollapse" role="button"
@@ -161,7 +292,28 @@
         <div class="collapse" id="CyberCollapse">
             <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                 <h3 class="text-center font-weight-bold">Features</h3>
-
+                <ul>
+                    <li>A main menu, pause menu, death menu and level complete menu</li>
+                    <li>Implemented sound, music, art and animation provided by me</li>
+                    <ul>
+                        <li>Perhaps not of the highest quality, my focus was ultimately on programming.</li>
+                    </ul>
+                    <li>Secret terminals that give insight into the lore of the world</li>
+                    <li>Static enemies that must be avoided and attacked to destroy</li>
+                    <li>Death and health mechanics that cause the player to die if they fall off the level or get hit by
+                        enemies too many times</li>
+                    <li>A camera that follows the player across the screen</li>
+                    <li>Multiple levels</li>
+                </ul>
+                <h3 class="text-center font-weight-bold">Problems Solved</h3>
+                <ul>
+                    <li>Getting the camera to follow the player without breaking the bounds of the level was a tricky
+                        challenge for me, as it was something I had never made before.</li>
+                    <ul>
+                        <li>Some levels have the camera locked on the vertical axis, but others do not, so I had to
+                            account for that.</li>
+                    </ul>
+                </ul>
             </div>
 
             <div class="container">
@@ -169,14 +321,29 @@
                     <div class="col">
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">What went well?</h3>
-
+                            <ul>
+                                <li>I think the game fit the theme relatively well.</li>
+                                <li>Overall, the game works with no major bugs or technical issues.</li>
+                                <li>The level design is varied and contains interesting features in the form of the secrets.</li>
+                                <li>The user interface looks good in the main menu.</li>
+                                <li>I produced a game to completion for the first time in making this game, and learned a lot about the process of developing games in doing so.</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
                             <h3 class="text-center font-weight-bold">How could I improve it?</h3>
-
+                            <ul>
+                                <li>The movement is quite floaty and could use some work.</li>
+                                <ul>
+                                    <li>Varying animations for jumping, falling, being hit would have improved the feel of movement.</li>
+                                </ul>
+                                <li>The game lacks variation in sound effects, and sound effects are quite poor quality and repetitive.</li>
+                                <li>The music is also quite repetitive.</li>
+                                <li>A system where levels can only be accessed if the preceding level is beaten would have been better.</li>
+                                <li>Enemies would have been way more engaging to fight if they moved around and took more than one hit to kill.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
