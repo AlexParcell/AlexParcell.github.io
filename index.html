@@ -108,18 +108,23 @@
                     <ul>
                         <li>AABB Collision with blocking capabilities</li>
                         <ul>
-                            <li>Radius-based collision is used for coins because they're circular, to make collision feel a little more realistic</li>
+                            <li>Radius-based collision is used for coins because they're circular, to make collision
+                                feel a little more realistic</li>
                         </ul>
                         <li>User interface with working text and buttons</li>
                         <li>Sprite animations that change based on gameplay conditions</li>
                         <ul>
-                            <li>Mario's animations will change based on whether they are moving, staying still, jumping, or have died</li>
-                            <li>Koopa's animations will change based on whether they are moving, in their shell staying still, or in their shall and moving</li>
+                            <li>Mario's animations will change based on whether they are moving, staying still, jumping,
+                                or have died</li>
+                            <li>Koopa's animations will change based on whether they are moving, in their shell staying
+                                still, or in their shall and moving</li>
                         </ul>
                         <li>A level editor that can save, load and edit levels</li>
                         <ul>
-                            <li>The level editor features menus that can be opened via buttons to choose items to add, select the level to edit, and there is also a button to save</li>
-                            <li>There is a working movable camera in the level editor that is restricted to the level bounds, that the user can use to move around in the level</li>
+                            <li>The level editor features menus that can be opened via buttons to choose items to add,
+                                select the level to edit, and there is also a button to save</li>
+                            <li>There is a working movable camera in the level editor that is restricted to the level
+                                bounds, that the user can use to move around in the level</li>
                         </ul>
                         <li>Music and sound effects</li>
                         <li>A system for managing and switching between levels</li>
@@ -138,7 +143,8 @@
                 </ul>
                 <h3 class="text-center font-weight-bold">Problems Solved</h3>
                 <ul>
-                    <li>To navigate my user interface widgets, I needed to implement buttons, so I made my own using AABB collision
+                    <li>To navigate my user interface widgets, I needed to implement buttons, so I made my own using
+                        AABB collision
                         checks to check if a button is clicked, and using enums to tag buttons with certain purposes and
                         using switch statements to execute the correct response upon a button being clicked</li>
                     <li>SDL does not have functionality for text handling, so I implemented my own text that takes
@@ -150,14 +156,19 @@
                         <li>Because Super Mario Bros had limited characters, I wasn't able to implement a wide variety
                             of characters and had to make do with what was available</li>
                     </ul>
-                    <li>To save on memory and to prevent unexpected behaviour, instead of using the game object classes used for the actual live gameplay as
-                        placeable tiles in the level editor, I had to make a level editor tile for each game object class that is converted
-                        into a format when the level is saved, that represents the live tiles when the actual level is loaded and played</li>
+                    <li>To save on memory and to prevent unexpected behaviour, instead of using the game object classes
+                        used for the actual live gameplay as
+                        placeable tiles in the level editor, I had to make a level editor tile for each game object
+                        class that is converted
+                        into a format when the level is saved, that represents the live tiles when the actual level is
+                        loaded and played</li>
                     <li>To implement blocking collision, I implemented a system into movement that performed checks to
                         see if a character's movement would make them overlap (determined with AABB) with something that
                         blocks, and if it does, the movement is cancelled</li>
                     <ul>
-                        <li>Because all characters (Koopas, Mario, Luigi, coins in Mario Bros) are subclasses of the character baseclass that the movement function is implemented into, this blocking collision is implemented elegantly into all game objects that move</li>
+                        <li>Because all characters (Koopas, Mario, Luigi, coins in Mario Bros) are subclasses of the
+                            character baseclass that the movement function is implemented into, this blocking collision
+                            is implemented elegantly into all game objects that move</li>
                     </ul>
                     <li>I made use of a sorting algorithm, both for adding Z sorting to ensure objects correctly render
                         in the right order, taking advantage of the fact that whatever is rendered last in SDL will show
@@ -167,7 +178,9 @@
                             lowest, with anything out of the top being culled</li>
                         <li>The algorithm I used was bubblesort</li>
                     </ul>
-                    <li>To make using the level editor a little easier and user-friendly, I added a grid that can be toggled with the G key that toggles a grid that overlays over the screen so the user knows exactly which tile they're placing their object into when designing levels</li>
+                    <li>To make using the level editor a little easier and user-friendly, I added a grid that can be
+                        toggled with the G key that toggles a grid that overlays over the screen so the user knows
+                        exactly which tile they're placing their object into when designing levels</li>
                 </ul>
             </div>
 
@@ -249,11 +262,10 @@
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Project Info:</h3>
             <p class="text-center">
-                This is a work in progress application I am developing in DirectX 11 for my Further Games & Graphics
-                Concepts module in my second year of university. The plan is to make a 3D aquatic boat simulation game
-                with working graphics, and then eventually I intend to implement physics next semester. I have been
-                working on this project for the last 2 months and hope to
-                have it finished by the end of the academic year.
+                This is an application I developed in DirectX 11 as part of my Further Games & Graphics module during my
+                second year of university. It is a graphical simulation of a boat on water, and is currently consisting
+                of the graphical implementation, but next semester I will begin work on implementing physics. I have
+                have been working on this project for the last 2 months.
             </p>
             <p class="text-center">
                 <a class="btn btn-primary" data-toggle="collapse" href="#DirectXCollapse" role="button"
@@ -271,17 +283,15 @@
                     <li>Texture mapping, specular mapping</li>
                     <li>Third person camera movement</li>
                     <li>.obj file loading</li>
+                    <li>Point and directional lighting</li>
+                    <li>Basic terrain</li>
+                    <li>Water with texture and mesh effects</li>
+                    <li>A controllable boat the rotates, accelerates and decelerates</li>
+                    <li>First and third person cameras fixed to the boat</li>
+                    <li>Cameras fixed to the scene</li>
+                    <li>Light and object loading from JSON</li>
                     <li>Hierarchical scene graphs</li>
                     <li>Skybox</li>
-                </ul>
-                <h3 class="text-center font-weight-bold">Planned Features</h3>
-                <ul>
-                    <li>User interface with an external library</li>
-                    <li>Fixed first person camera movement</li>
-                    <li>Controllable boat with a camera that follows it</li>
-                    <li>Water effects</li>
-                    <li>Level data storage with JSON</li>
-                    <li>Point, directional and spot lighting</li>
                 </ul>
             </div>
 
@@ -289,42 +299,31 @@
                 <div class="row">
                     <div class="col">
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-                            <h3 class="text-center font-weight-bold">What is going well?</h3>
+                            <h3 class="text-center font-weight-bold">What went well?</h3>
                             <ul>
-                                <li>Lighting and texturing are working exactly as intended</li>
-                                <li>Lighting makes use of per-pixel phong shading successfully</li>
-                                <li>Camera movement works well in third person</li>
-                                <li>The hierarchical scene graph works and is very easy to use, and it is very easy to
-                                    add
-                                    new children to objects</li>
-                                <li>The skybox works well and follows the camera</li>
-                                <li>My game objects support having varying meshes, textures, specular maps, vertex
-                                    shaders,
-                                    and pixel shaders</li>
-                                <li>I am developing a strong understanding of working with DirectX 11, and shader
-                                    programming with HLSL</li>
-                                <li>Functionality is very well organized into object oriented data structures to enable
-                                    modularity</li>
-                            </ul>
+                                <li>Ambient, diffuse and specular lighting works and factors in directional/point light instances that can moved and altered, either via JSON or during runtime programmatically.</li>
+                                <li>Textures (.dds) and meshes (.obj) can be loaded in and can vary by instance of game object</li>
+                                <li>The skybox works and follows the camera, using a shader to calculate the gradient between the two shades of blue</li>
+                                <li>I was able to implement terrain and use a pixel shader to lerp between colours to make it look more authentic</li>
+                                <li>Water makes use of texture coordinate manipulation to create a tiled, swaying effect</li>
+                                <li>Cameras work well in both first and third person, and fixed cameras work well</li>
+                                <li>I managed to successfully learn HLSL in making this project</li>
+                                <li>Game objects can make use of varying shaders to suit the specific object's needs</li>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-                            <h3 class="text-center font-weight-bold">How do I need to improve?</h3>
+                            <h3 class="text-center font-weight-bold">What could be improved?</h3>
                             <ul>
-                                <li>The skybox needs a better texture (currently placeholder), and the shape needs to be
-                                    changed from a cube to a sphere</li>
-                                <ul>
-                                    <li>Because the cube I am using is not intended to have inverted normals there is a
-                                        weird black mark in the upper and lower portions of the shape</li>
-                                </ul>
-                                <li>The camera should use interpolation to make movement less jarring</li>
-                                <li>I need to implement the first person camera that follows objects and locks to their
-                                    position and moves around them</li>
-                                <li>The camera rotation gets buggy when looking straight up or straight down, so I need
-                                    to
-                                    correct that.</li>
+                                <li>The application does not currently support muiltiple levels</li>
+                                <li>JSON can be read but not written, it must be edited from the file</li>
+                                <li>Spotlights would have been a good addition for lighting</li>
+                                <li>Terrain would have looked better if it used textures rather than solid colours, same for skybox</li>
+                                <li>Cameras would have been better if they had collision so they cannot clip through terrain, this is planned for next semester when physics is done</li> 
+                                <li>There is a red sphere that is meant to be used as a seamine in the next semester, an actual model would have looked nicer</li>
+                                <li>If the boat swayed and moved up and down to communicate buoyancy, the simulation would be more complete, this will be done next semester</li>
+                                <li>Collision between the boat and terrain would be good, will be added next semester</li>
                             </ul>
                         </div>
                     </div>
@@ -423,8 +422,10 @@
 
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
             <h3 class="text-center font-weight-bold">Thanks for visiting my portfolio!</h3>
-            <p class="text-center">If you like what you see, feel free to contact me via my Twitter or LinkedIn and I would be more than happy to send over a CV and my email.</p>
-            <p class="text-center">If you would to see some more work, feel free to click the below button to see other projects I have developed during my studies:</p>
+            <p class="text-center">If you like what you see, feel free to contact me via my Twitter or LinkedIn and I
+                would be more than happy to send over a CV and my email.</p>
+            <p class="text-center">If you would to see some more work, feel free to click the below button to see other
+                projects I have developed during my studies:</p>
             <div class="text-center">
                 <a class="btn btn-primary" href="MoreProjects.html" role="button">More Projects</a>
             </div>
