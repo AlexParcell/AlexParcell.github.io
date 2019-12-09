@@ -75,6 +75,86 @@
         </div>
 
         <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
+            <h2 class="text-center font-weight-bold">DirectX 11 Graphics Project (2019)</h2>
+        </div>
+
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vJzousAmoWE"></iframe>
+        </div>
+
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+            <h3 class="text-center font-weight-bold">Project Info:</h3>
+            <p class="text-center">
+                This is an application I developed in DirectX 11 as part of my Further Games & Graphics module during my
+                second year of university. It is a graphical simulation of a boat on water, and is currently consisting
+                of the graphical implementation, but next semester I will begin work on implementing physics. I have
+                have been working on this project for the last 2 months.
+            </p>
+            <p class="text-center">
+                <a class="btn btn-primary" data-toggle="collapse" href="#DirectXCollapse" role="button"
+                    aria-expanded="false" aria-controls="DirectXCollapse">
+                    Read More
+                </a>
+            </p>
+        </div>
+
+        <div class="collapse" id="DirectXCollapse">
+            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                <h3 class="text-center font-weight-bold">Current Features</h3>
+                <ul>
+                    <li>Specular, diffuse and ambient lighting</li>
+                    <li>Texture mapping, specular mapping</li>
+                    <li>Third person camera movement</li>
+                    <li>.obj file loading</li>
+                    <li>Point and directional lighting</li>
+                    <li>Basic terrain</li>
+                    <li>Water with texture and mesh effects</li>
+                    <li>A controllable boat the rotates, accelerates and decelerates</li>
+                    <li>First and third person cameras fixed to the boat</li>
+                    <li>Cameras fixed to the scene</li>
+                    <li>Light and object loading from JSON</li>
+                    <li>Hierarchical scene graphs</li>
+                    <li>Skybox</li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                            <h3 class="text-center font-weight-bold">What went well?</h3>
+                            <ul>
+                                <li>Ambient, diffuse and specular lighting works and factors in directional/point light instances that can moved and altered, either via JSON or during runtime programmatically.</li>
+                                <li>Textures (.dds) and meshes (.obj) can be loaded in and can vary by instance of game object</li>
+                                <li>The skybox works and follows the camera, using a shader to calculate the gradient between the two shades of blue</li>
+                                <li>I was able to implement terrain and use a pixel shader to lerp between colours to make it look more authentic</li>
+                                <li>Water makes use of texture coordinate manipulation to create a tiled, swaying effect</li>
+                                <li>Cameras work well in both first and third person, and fixed cameras work well</li>
+                                <li>I managed to successfully learn HLSL in making this project</li>
+                                <li>Game objects can make use of varying shaders to suit the specific object's needs</li>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
+                            <h3 class="text-center font-weight-bold">What could be improved?</h3>
+                            <ul>
+                                <li>The application does not currently support muiltiple levels</li>
+                                <li>JSON can be read but not written, it must be edited from the file</li>
+                                <li>Spotlights would have been a good addition for lighting</li>
+                                <li>Terrain would have looked better if it used textures rather than solid colours, same for skybox</li>
+                                <li>Cameras would have been better if they had collision so they cannot clip through terrain, this is planned for next semester when physics is done</li> 
+                                <li>There is a red sphere that is meant to be used as a seamine in the next semester, an actual model would have looked nicer</li>
+                                <li>If the boat swayed and moved up and down to communicate buoyancy, the simulation would be more complete, this will be done next semester</li>
+                                <li>Collision between the boat and terrain would be good, will be added next semester</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
             <h2 class="text-center font-weight-bold">Mario Clone (2019)</h2>
         </div>
 
@@ -244,86 +324,6 @@
                                         flowers</li>
                                 </ul>
                                 <li>I could have added more possible characters for text</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 0.5%; margin-bottom: 0px">
-            <h2 class="text-center font-weight-bold">DirectX 11 Graphics Project (2019)</h2>
-        </div>
-
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vJzousAmoWE"></iframe>
-        </div>
-
-        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-            <h3 class="text-center font-weight-bold">Project Info:</h3>
-            <p class="text-center">
-                This is an application I developed in DirectX 11 as part of my Further Games & Graphics module during my
-                second year of university. It is a graphical simulation of a boat on water, and is currently consisting
-                of the graphical implementation, but next semester I will begin work on implementing physics. I have
-                have been working on this project for the last 2 months.
-            </p>
-            <p class="text-center">
-                <a class="btn btn-primary" data-toggle="collapse" href="#DirectXCollapse" role="button"
-                    aria-expanded="false" aria-controls="DirectXCollapse">
-                    Read More
-                </a>
-            </p>
-        </div>
-
-        <div class="collapse" id="DirectXCollapse">
-            <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-                <h3 class="text-center font-weight-bold">Current Features</h3>
-                <ul>
-                    <li>Specular, diffuse and ambient lighting</li>
-                    <li>Texture mapping, specular mapping</li>
-                    <li>Third person camera movement</li>
-                    <li>.obj file loading</li>
-                    <li>Point and directional lighting</li>
-                    <li>Basic terrain</li>
-                    <li>Water with texture and mesh effects</li>
-                    <li>A controllable boat the rotates, accelerates and decelerates</li>
-                    <li>First and third person cameras fixed to the boat</li>
-                    <li>Cameras fixed to the scene</li>
-                    <li>Light and object loading from JSON</li>
-                    <li>Hierarchical scene graphs</li>
-                    <li>Skybox</li>
-                </ul>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-                            <h3 class="text-center font-weight-bold">What went well?</h3>
-                            <ul>
-                                <li>Ambient, diffuse and specular lighting works and factors in directional/point light instances that can moved and altered, either via JSON or during runtime programmatically.</li>
-                                <li>Textures (.dds) and meshes (.obj) can be loaded in and can vary by instance of game object</li>
-                                <li>The skybox works and follows the camera, using a shader to calculate the gradient between the two shades of blue</li>
-                                <li>I was able to implement terrain and use a pixel shader to lerp between colours to make it look more authentic</li>
-                                <li>Water makes use of texture coordinate manipulation to create a tiled, swaying effect</li>
-                                <li>Cameras work well in both first and third person, and fixed cameras work well</li>
-                                <li>I managed to successfully learn HLSL in making this project</li>
-                                <li>Game objects can make use of varying shaders to suit the specific object's needs</li>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="jumbotron" style="padding-top: 1%; padding-bottom: 1%">
-                            <h3 class="text-center font-weight-bold">What could be improved?</h3>
-                            <ul>
-                                <li>The application does not currently support muiltiple levels</li>
-                                <li>JSON can be read but not written, it must be edited from the file</li>
-                                <li>Spotlights would have been a good addition for lighting</li>
-                                <li>Terrain would have looked better if it used textures rather than solid colours, same for skybox</li>
-                                <li>Cameras would have been better if they had collision so they cannot clip through terrain, this is planned for next semester when physics is done</li> 
-                                <li>There is a red sphere that is meant to be used as a seamine in the next semester, an actual model would have looked nicer</li>
-                                <li>If the boat swayed and moved up and down to communicate buoyancy, the simulation would be more complete, this will be done next semester</li>
-                                <li>Collision between the boat and terrain would be good, will be added next semester</li>
                             </ul>
                         </div>
                     </div>
