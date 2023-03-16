@@ -1,27 +1,73 @@
+@font-face {
+    font-family: "VT323";
+    src: url("VT323-Regular.ttf");
+}
+
+* {
+    border-radius: 0 !important;
+}
+
 body {
     background-color: 292929;
+    font-family: "VT323";
 }
 
-.jumbotron {
-    background-color: 121212;
+.top-bar {
+    position: fixed;
+    size: absolute;
+    top: 0px; left: 0px; width: 100%; height: 96px;
+    background-color: 691966;
+    padding: 0; margin: 0;
+    background-image: url("topbar-bg.png");
+    z-index: 10;
 }
 
-p {
-    color: FFFFFF;
+.main-title-text {
+    size: absolute;
+    text-align: center;
+    top: 16px;
+    padding: 0; margin: 0;
+    font-weight: normal;
+    font-size: 96px;
 }
 
-h1 {
-    color: FFFFFF;
+.nav-bar {
+    position: fixed;
+    size: absolute;
+    top: 96px; left: 0px; width: 100%; height: 48px;
+    padding: 0; margin: 0;
+    background-image: url("navbar-bg.png");
+    z-index: 10;
 }
 
-h2 {
-    color: FFFFFF;
+.nav-bar-text {
+    size: absolute;
+    text-align: center;
+    top: 128px;
+    padding: 8px; margin: 0;
+    font-weight: normal;
+    font-size: 32px;
 }
 
-h3 {
-    color: FFFFFF;
+.test-box {
+    position: fixed;
+    size: absolute;
+    left: 0px; width: 256px; height: 64px;
+    padding: 0; margin: 0;
+    background-image: url("test-box.png");
+    z-index: 10;
 }
 
-li {
+.main-bg {
+    position: absolute;
+    size: absolute;
+    top: 144px; left: 0px; width: 100%; height: calc(100% - 144px);
+    padding: 0; margin: 0;
+    background-image: url("main-bg-tile.png");
+    background-repeat: repeat;
+}
+
+p,h1,h2,h3,li {
+    font-weight: normal;
     color: FFFFFF;
 }
