@@ -6,6 +6,7 @@
     <title>Portfolio Website</title>
 </head>
 
+
 <body>
     <div class="top-bar">
         <h1 class="main-title-text">Alex Parcell</h1>
@@ -14,11 +15,195 @@
         <h1 class="nav-bar-text">Game Developer & Programmer specializing in Gameplay, Artificial Intelligence and User Interface</h1>
     </div>
     <div class="main-bg">
-    
+        <div class="skill-title-wide" style="top: 8px; left: 40px;">
+            <h1 class="skill-title-text">Profile</h1>
+        </div>
+
+        <div class="black-out" id="blackout"></div>
+
+        <div class="canvas" style="top: 104px; left: 40px;">
+        </div>
+
+        <div class="skill-title" style="top: 8px; left: calc(692px + 12px);">
+            <h1 class="skill-title-text">Skills</h1>
+        </div>
+
+        <table class="skill-table" style="top: 96px; left: calc(690px + 12px);">
+            <tr>
+                <td>
+                    <img src="cppicon.png" class="skill-box"></div>
+                </td>
+                <td>
+                    <img src="luaicon.png" class="skill-box"></div>
+                </td>
+                <td>
+                    <img src="ueicon.png" class="skill-box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="skill-title" style="top: 528px; left: calc(692px + 12px);">
+            <h1 class="skill-title-text">Awards</h1>
+        </div>
+
+        <table class="skill-table" style="top: 616px; left: calc(690px + 12px);">
+            <tr>
+                <td>
+                    <img src="sgsicon.png" class="skill-box"></div>
+                </td>
+                <td>
+                    <img src="tiga-icon.png" class="skill-box"></div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="skill-title" style="top: 8px; left: calc(1080px + 28px);">
+            <h1 class="skill-title-text">Projects</h1>
+        </div>
+
+        <table class="skill-table" style="top: 96px; left: calc(1078px + 28px);">
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="skill-title" style="top: 528px; left: calc(1080px + 28px);">
+            <h1 class="skill-title-text">Education</h1>
+        </div>
+
+        <table class="skill-table" style="top: 616px; left: calc(1078px + 28px);">
+            <tr>
+                <td>
+                    <img src="sgsicon.png" class="skill-box"></div>
+                </td>
+                <td>
+                    <img src="staffsicon.png" class="skill-box"></div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="skill-title" style="top: 8px; left: calc(1468px + 44px);">
+            <h1 class="skill-title-text">Releases</h1>
+        </div>
+
+        <table class="skill-table" style="top: 96px; left: calc(1466px + 44px);">
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+                <td>
+                    <div class="skill-box"></div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="skill-title" style="top: 528px; left: calc(1468px + 44px);">
+            <h1 class="skill-title-text">Contact Me!</h1>
+        </div>
+
+        <table class="skill-table" style="top: 616px; left: calc(1466px + 44px);">
+            <tr>
+                <td>
+                    <img src="twittericon.png" class="skill-box"></div>
+                </td>
+                <td>
+                    <img src="linkedinicon.png" class="skill-box"></div>
+                </td>
+                <td>
+                    <img src="githubicon.png" class="skill-box"></div>
+                </td>
+            </tr>
+        </table>
+
     </div>
     <div class="bottom-bar">
         <h1 class="nav-bar-text">Thanks for visiting my portfolio! This is a work in progress, so come back soon for more stuff!</h1>
     </div>
+
+    <script>
+        var skillboxCollection = document.getElementsByClassName("skill-box")
+        for (var i = 0; i < skillboxCollection.length; i++) {
+            skillboxCollection[i].addEventListener('click', myFunction, false);
+        }
+    
+        var blackoutEnabled = false;
+    
+        function myFunction() {
+            if (blackoutEnabled)
+            {
+                document.getElementById("blackout").style.visibility = "hidden";
+                blackoutEnabled = false;
+            }
+            else
+            {
+                document.getElementById("blackout").style.visibility = "visible";
+                blackoutEnabled = true;
+            }
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
